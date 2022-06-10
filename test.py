@@ -34,3 +34,38 @@ def test_circle_area():
 def test_triangle_area():
     assert tangle.perimeter == 8.0, "test failed"
     assert type(tangle.perimeter) == float, "datatype error"
+
+def test_cube_volume_null():
+    cube = shapes.cube(0, 0, 0)
+    assert cube.volume == 0, "test failed"
+    assert type(cube.volume) == float, "datatype error"
+    cube2 = shapes.cube(0, 1, 0)
+    cube3 = shapes.cube(1, 0, 1)
+    assert cube.volume == cube2.volume and cube.volume == cube3.volume, "test failed"
+
+def test_cube_volume_full():
+    cube = shapes.cube(1, 1, 1)
+    assert cube.volume == 1, "test failed"
+    assert type(cube.volume) == float, "datatype error"
+    cube2 = shapes.cube(10, 10, 10)
+    assert cube2.volume == 1000, "test failed"
+    assert type(cube2.volume) == float, "datatype error"
+
+def test_cube_surface_area_null():
+    cube = shapes.cube(0, 0, 0)
+    assert cube.surface_area == 0, "test failed"
+    assert type(cube.surface_area) == float, "datatype error"
+
+def test_cube_surface_area_full():
+    cube = shapes.cube(1, 1, 1)
+    assert cube.surface_area == 6, "test failed"
+    assert type(cube.surface_area) == float, "datatype error"
+    cube2 = shapes.cube(10, 10, 10)
+    assert cube2.surface_area == 600, "test failed"
+    assert type(cube2.surface_area) == float, "datatype error"
+    cube3 = shapes.cube(10, 5, 1)
+    assert cube3.surface_area == 130, "test failed"
+    assert type(cube3.surface_area) == float, "datatype error"
+    cube4 = shapes.cube(10, 5, 0)
+    assert cube4.surface_area == 120, "test failed"
+    assert type(cube4.surface_area) == float, "datatype error"
